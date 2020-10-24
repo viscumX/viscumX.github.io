@@ -9,6 +9,8 @@ tags: [hexo]
 
 下面详细介绍一下流程
 
+<!--more-->
+
 ## Node.js的安装
 
 这一步相当简单，去[官网](https://nodejs.org/zh-cn/)上下载之后无脑安装就行了
