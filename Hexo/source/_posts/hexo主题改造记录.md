@@ -16,5 +16,3 @@ hexo第三方主题next的个性化改造记录
 <div class="headband"></div>
 ```
 下方粘贴就好，然后将href改为自己的Github地址
-
-next主题也可以直接在_config.yml文件中修改
