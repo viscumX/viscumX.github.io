@@ -3,6 +3,7 @@ title: Leetcode刷题--两数之和
 date: 2020-10-31 18:35:14
 categories: 刷题记录
 tags: 刷题
+mathjax: true
 ---
 
 ## 题目描述
@@ -13,6 +14,7 @@ tags: 刷题
 ---
 
 ## 解法
+<!--more-->
 ### 暴力法
 可以直接遍历两遍数组，算出所有的两数之和与 target 值进行比较
 ```C++

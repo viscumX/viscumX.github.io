@@ -18,5 +18,12 @@ hexo第三方主题next的个性化改造记录
 下方粘贴就好，然后将href改为自己的Github地址
 
 ## 添加头像和社交图标及链接
-
 在/themes/next/_config.yml中更改avatar下的url内容，如果下载到本地的话可以直接更改为图像的地址，这样就能设置好头像了
+
+## next主题设置latex渲染
+首先要更换渲染引擎
+```bash
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-pandoc --save
+```
+然后开启 /themes/next/_config.yml中的 mathjax ，默认只有在 front-matter 中声明 mathjax：true 时才会对博客中的 latex 公式进行渲染，如果想默认每篇都渲染的话，就把 math 中的 per_page 改为false就可以了
