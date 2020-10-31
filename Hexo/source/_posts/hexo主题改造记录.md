@@ -16,3 +16,7 @@ hexo第三方主题next的个性化改造记录
 <div class="headband"></div>
 ```
 下方粘贴就好，然后将href改为自己的Github地址
+
+## 添加头像和社交图标及链接
+
+在/themes/next/_config.yml中更改avatar下的url内容，如果下载到本地的话可以直接更改为图像的地址，这样就能设置好头像了
