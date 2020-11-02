@@ -38,7 +38,7 @@ public:
 时间复杂度为 $O(N^2)$ ，是比较耗时的
 
 ### Hashmap法
-个人看来，哈希表就是建立 key 到 value 的一对一映射，通过建立哈希表快速寻找 target-x(当前值)对应的下标
+个人看来，哈希表就是建立 key 到 value 的一对一映射，通过建立哈希表快速寻找 target-x(当前值) 对应的下标
 ```C++
 class Solution {
 public:
