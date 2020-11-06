@@ -3,10 +3,13 @@ title: Leetcode刷题-合并两个有序链表
 date: 2020-11-06 13:23:20
 categories:
 tags:
+mathjax: true
 ---
 
 ## 题目描述
 将两个升序链表合并为一个新的**升序**链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的
+
+刷题链接：[https://leetcode-cn.com/problems/merge-two-sorted-lists/](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
 <!--more-->
 
@@ -60,17 +63,30 @@ public:
 这就是两个链表头部较小的值与剩下的值合并的递归过程
 
 ```C++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         if (l1 == nullptr) {
             return l2;
-        } else if (l2 == nullptr) {
+        }
+        else if (l2 == nullptr) {
             return l1;
-        } else if (l1->val < l2->val) {
+        }
+        else if (l1->val < l2->val) {
             l1->next = mergeTwoLists(l1->next, l2);
             return l1;
-        } else {
+        }
+        else {
             l2->next = mergeTwoLists(l1, l2->next);
             return l2;
         }
