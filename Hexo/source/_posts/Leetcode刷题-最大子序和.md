@@ -5,9 +5,10 @@ categories:
 tags:
 mathjax: true
 ---
+
 ## 题目描述
 
-给定一个整数数组nums，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和
+给定一个整数数组 nums，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和
 
 刷题链接：[https://leetcode-cn.com/problems/maximum-subarray/](https://leetcode-cn.com/problems/maximum-subarray/)
 
@@ -41,7 +42,7 @@ public:
 };
 ```
 
-时间复杂度直接到了 $O(N^2)$ ，空间复杂度为 $O(1)$
+时间复杂度直接到了$O(N^2)$ ，空间复杂度为$O(1)$
 
 ### 贪心法
 
@@ -71,3 +72,57 @@ public:
 
 ### 分治法
 
+虽然不是最优的方法，但是也挺难的
+
+将 nums 分为[start, mid]和[mid+1, end]两部分，算出前后两个最大子列和值，再加上任意包含 mid 和 mid+1 的子列的最大和值，三个值取最大的
+
+```C++
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        return maxRangedArray(nums, 0, nums.size()-1);
+    }
+
+    int maxRangedArray(vector<int>& nums, int start, int end){
+        if (start == end){
+            return nums[start];
+        }
+
+        int mid = (start + end) / 2;
+        int lMax = maxRangedArray(nums, start, mid);
+        int rMax = maxRangedArray(nums, mid + 1, end);
+
+        int leftMidMax = nums[mid];
+        int leftSum = 0;
+        for (int i = mid; i >= start; i--){
+            leftSum += nums[i];
+            if (leftSum > leftMidMax){
+                leftMidMax = leftSum;
+            }
+        }
+
+        int rightMidMax = nums[mid + 1];
+        int rightSum = 0;
+        for (int i = mid + 1; i <= end; i++){
+            rightSum += nums[i];
+            if(rightSum > rightMidMax){
+                rightMidMax = rightSum;
+            }
+        }
+
+        int midMax = leftMidMax + rightMidMax;
+
+        if (lMax >= rMax && lMax >= midMax){
+            return lMax;
+        }
+        else if (rMax >= lMax && rMax >= midMax){
+            return rMax;
+        }
+        else{
+            return midMax;
+        }
+    }
+};
+```
+
+时间复杂度为$O(NlogN)$，空间复杂度为$O(logN)$
