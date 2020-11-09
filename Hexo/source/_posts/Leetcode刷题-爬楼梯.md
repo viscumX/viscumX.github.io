@@ -18,11 +18,9 @@ mathjax: true
 
 ## 解法
 
-### 数学法
+关于这个爬楼梯的问题想到斐波那契就好做了，可以分解为两步，首先爬 1 阶楼梯，接下来就是爬（n-1）阶楼梯的问题，或者首先爬 2 阶楼梯，接下来就变成了爬（n-2）阶楼梯的问题。所以整个问题就变成了爬（n-1）阶楼梯的方法数和爬（n-2）阶楼梯的方法数之和
 
-或者说斐波那契数列法？关于这个爬楼梯的问题，可以分解为两步，首先爬 1 阶楼梯，接下来就是爬（n-1）阶楼梯的问题，或者首先爬 2 阶楼梯，接下来就变成了爬（n-2）阶楼梯的问题。所以整个问题就变成了爬（n-1）阶楼梯的方法数和爬（n-2）阶楼梯的方法数之和
-
-可以用动态规划的思想
+### 动态规划
 
 ```C++
 class Solution {
@@ -43,7 +41,7 @@ public:
 
 时间复杂度为$O(N)$，空间复杂度为$O(1)$
 
-也可以用递归的方法来实现
+### 递归
 
 ```C++
 class Solution {
@@ -67,3 +65,39 @@ public:
 还可以用公式来解，这个就太简单了，不贴代码了
 
 ### 矩阵快速幂
+
+这个解法涉及到一点线性代数知识，首先要了解快速幂的概念和矩阵乘的方法
+
+```C++
+class Solution {
+public:
+    int climbStairs(int n) {
+        vector<vector<long long>> x = {{1, 1}, {1, 0}};
+        vector<vector<long long>> ans = matFastPow(n, x);
+        return ans[0][0];
+    }
+private:
+    vector<vector<long long>> matFastPow(int n, vector<vector<long long>> &x){
+        vector<vector<long long>> res = {{1, 0}, {0, 1}};
+        while(n){
+            if(n&1){
+                res = matMul(x, res);
+            }
+            n = n >> 1;
+            x = matMul(x, x);
+        }
+        return res;
+    }
+
+    vector<vector<long long>> matMul(vector<vector<long long>> &a, vector<vector<long long>>&b){
+        vector<vector<long long>> c = {{0, 0}, {0, 0}};
+        c[0][0] = a[0][0]*b[0][0]+a[0][1]*b[1][0];
+        c[0][1] = a[0][0]*b[0][1]+a[0][1]*b[1][1];
+        c[1][0] = a[1][0]*b[0][0]+a[1][1]*b[1][0];
+        c[1][1] = a[1][0]*b[0][1]+a[1][1]*b[1][1];
+        return c;
+    }
+};
+```
+
+时间复杂度为$O(logN)$
