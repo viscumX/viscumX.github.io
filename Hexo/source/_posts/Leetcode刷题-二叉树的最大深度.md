@@ -14,7 +14,7 @@ mathjax: true
 
 说明: 叶子节点是指没有子节点的节点。
 
-刷题链接：[https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+**刷题链接**：[https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 
 <!--more-->
 

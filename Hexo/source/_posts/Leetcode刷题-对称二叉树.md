@@ -30,7 +30,7 @@ mathjax: true
    3    3
 ```
 
-刷题链接：[https://leetcode-cn.com/problems/symmetric-tree/](https://leetcode-cn.com/problems/symmetric-tree/)
+**刷题链接**：[https://leetcode-cn.com/problems/symmetric-tree/](https://leetcode-cn.com/problems/symmetric-tree/)
 
 <!--more-->
 
