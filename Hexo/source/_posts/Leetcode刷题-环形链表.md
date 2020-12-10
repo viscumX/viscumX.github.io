@@ -20,6 +20,8 @@ mathjax: true
 
 **刷题链接**：[https://leetcode-cn.com/problems/linked-list-cycle](https://leetcode-cn.com/problems/linked-list-cycle)
 
+<!--more-->
+
 ## 解法
 
 ### 超界
