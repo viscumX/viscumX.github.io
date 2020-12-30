@@ -12,6 +12,8 @@ n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点  (i
 
 **刷题链接**：[https://leetcode-cn.com/problems/container-with-most-water](https://leetcode-cn.com/problems/container-with-most-water)
 
+<!--more-->
+
 ## 解法
 
 ### 双指针
