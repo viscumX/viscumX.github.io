@@ -8,9 +8,7 @@ mathjax: true
 
 ## 题目描述
 
-假设你正在爬楼梯。需要 n 阶你才能到达楼顶
-
-每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+假设在爬楼梯。需要 n 阶才能到达楼顶，每次可以爬 1 或 2 个台阶。有多少种不同的方法可以爬到楼顶？
 
 **刷题链接**：[https://leetcode-cn.com/problems/climbing-stairs/](https://leetcode-cn.com/problems/climbing-stairs/)
 
