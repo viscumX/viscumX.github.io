@@ -25,44 +25,44 @@ mathjax: true
 ```C++
 class Solution {
 public:
-	vector<string> letterCombinations(string digits) {
-		vector<string> ans;
-		unordered_map<char, string> hashtable;
-		hashtable['2'] = "abc";
-		hashtable['3'] = "def";
-		hashtable['4'] = "ghi";
-		hashtable['5'] = "jkl";
-		hashtable['6'] = "mno";
-		hashtable['7'] = "pqrs";
-		hashtable['8'] = "tuv";
-		hashtable['9'] = "wxyz";
-		ans = recursion(digits, ans, hashtable);
-		return ans;
-	}
+    vector<string> letterCombinations(string digits) {
+        vector<string> ans;
+        unordered_map<char, string> hashtable;
+        hashtable['2'] = "abc";
+        hashtable['3'] = "def";
+        hashtable['4'] = "ghi";
+        hashtable['5'] = "jkl";
+        hashtable['6'] = "mno";
+        hashtable['7'] = "pqrs";
+        hashtable['8'] = "tuv";
+        hashtable['9'] = "wxyz";
+        ans = recursion(digits, ans, hashtable);
+        return ans;
+    }
 
-	vector<string> recursion(string str, vector<string> strSet, unordered_map<char, string> hashtable) {
-		if (!str.size()) {
-			return strSet;
-		}
-		char first = str[0];
-		int strSetSize = strSet.size();
-		string s = hashtable[first];
-		vector<string> temp(strSet);
-		if (!strSetSize) {
-			strSet.resize(s.size());
-			for (int i = 0; i < strSet.size(); i++) {
-				strSet[i] = s[i % (s.size())];
-			}
-		}
-		else {
-			strSet.resize(strSetSize*s.size());
-			for (int i = 0; i < strSet.size(); i++) {
-				strSet[i] = temp[i / (s.size())] + s[i % (s.size())];
-			}
-		}
-		str = str.substr(1);
-		return recursion(str, strSet, hashtable);
-	}
+    vector<string> recursion(string str, vector<string> strSet, unordered_map<char, string> hashtable) {
+        if (!str.size()) {
+            return strSet;
+        }
+        char first = str[0];
+        int strSetSize = strSet.size();
+        string s = hashtable[first];
+        vector<string> temp(strSet);
+        if (!strSetSize) {
+            strSet.resize(s.size());
+            for (int i = 0; i < strSet.size(); i++) {
+                strSet[i] = s[i % (s.size())];
+            }
+        }
+        else {
+            strSet.resize(strSetSize*s.size());
+            for (int i = 0; i < strSet.size(); i++) {
+                strSet[i] = temp[i / (s.size())] + s[i % (s.size())];
+            }
+        }
+        str = str.substr(1);
+        return recursion(str, strSet, hashtable);
+    }
 };
 ```
 
@@ -74,10 +74,11 @@ public:
 class Solution {
 public:
     vector<string> ans;
-	unordered_map<char, string> hashtable;
+    unordered_map<char, string> hashtable;
     string temp;
+
     void recursion(string digits, int id) {
-		if(id==digits.size()){
+        if(id==digits.size()){
             ans.push_back(temp);
             return;
         }
@@ -85,9 +86,9 @@ public:
             temp.push_back(hashtable[digits[id]][i]);
             recursion(digits, id+1);
             temp.pop_back();
+            }
         }
-	}
-	vector<string> letterCombinations(string digits) {
+    vector<string> letterCombinations(string digits) {
         hashtable['2'] = "abc";
         hashtable['3'] = "def";
         hashtable['4'] = "ghi";
@@ -101,6 +102,6 @@ public:
         }
         recursion(digits,0);
         return ans;
-	}
+    }
 };
 ```

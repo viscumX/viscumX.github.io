@@ -23,27 +23,27 @@ mathjax: true
 ```C++
 class Solution {
 public:
-	vector<vector<int>> threeSum(vector<int>& nums) {
-		vector<vector<int>> sumSet;
-		vector<int> sum(3);
-		sort(nums.begin(), nums.end());
-		for (int i = 0; i < nums.size();i++) {
-			int twoSum = 0 - nums[i];
-			unordered_map<int, int> hashtable;
-			for (int j = i+1; j < nums.size(); j++) {
-				if (hashtable.find(twoSum - nums[j]) != hashtable.end()) {
-					sum[0] = nums[i];
-					sum[1] = twoSum - nums[j];
-					sum[2] = nums[j];
-					if (find(sumSet.begin(), sumSet.end(), sum) == sumSet.end()) {
-						sumSet.emplace_back(sum);
-					}
-				}
-				hashtable[nums[j]] = twoSum - nums[j];
-			}
-		}
-		return sumSet;
-	}
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> sumSet;
+        vector<int> sum(3);
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i < nums.size();i++) {
+            int twoSum = 0 - nums[i];
+            unordered_map<int, int> hashtable;
+            for (int j = i+1; j < nums.size(); j++) {
+                if (hashtable.find(twoSum - nums[j]) != hashtable.end()) {
+                    sum[0] = nums[i];
+                    sum[1] = twoSum - nums[j];
+                    sum[2] = nums[j];
+                    if (find(sumSet.begin(), sumSet.end(), sum) == sumSet.end()) {
+                        sumSet.emplace_back(sum);
+                    }
+                }
+                hashtable[nums[j]] = twoSum - nums[j];
+            }
+        }
+        return sumSet;
+    }
 };
 ```
 
@@ -56,8 +56,8 @@ public:
 ```C++
 class Solution {
 public:
-	vector<vector<int>> threeSum(vector<int>& nums) {
-		vector<vector<int>> sumSet;
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> sumSet;
         sort(nums.begin(),nums.end());
         for(int i=0;i<nums.size();i++){
             if(i>0&&nums[i-1]==nums[i]){
@@ -79,8 +79,8 @@ public:
                 }
             }
         }
-		return sumSet;
-	}
+        return sumSet;
+    }
 };
 ```
 
