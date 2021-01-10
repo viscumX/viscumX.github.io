@@ -7,6 +7,8 @@ tags: [个性化, win10]
 
 小红车（wallpaper engine）上有很多好看的 win10 桌面壁纸，但是用着总觉得少了点什么，于是开始进行我的个人笔记本桌面改造
 
+<!--more-->
+
 ## 壁纸
 
 开头就说过了，小红车 19 元不亏，steam 上直接搜 wallpaper engine 就完事了
