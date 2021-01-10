@@ -79,3 +79,19 @@ git add .
 git commit -m "xxx" # xxx随便写什么
 git push origin hexo
 ```
+
+### 同步时遇到的 pandoc 版本问题
+
+某天在同步博客时使用`hexo s -g`命令时，打开的页面只显示 CAN'T GET/
+
+检查发现在 generate 的时候并没有生成 index.html 文件，并且后来报错说
+
+```
+[ERROR][hexo-renderer-pandoc] pandoc exited with code 9: pandoc: Unknown extension: smart
+```
+
+其实这是之前安装的 hexo-renderer-pandoc 的版本和个人电脑上的 pandoc 版本不匹配造成的，pandoc2.0 版本取消了 smart 扩展。因此只要安装一个更高版本的 hexo-renderer-pandoc 就能解决问题了
+
+```
+npm install --save hexo-renderer-pandoc@0.2.3
+```
