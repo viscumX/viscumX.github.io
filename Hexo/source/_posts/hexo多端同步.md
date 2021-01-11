@@ -51,8 +51,8 @@ git submodule add https://github.com/yourname/hexo-theme-next themes/next
 
 ```bash
 npm install hexo-cli -g # 安装hexo
-git clone -b hexo git@github.com:yourname/yourname.github.io.git
 npm install # 安装相关依赖
+git clone -b hexo git@github.com:yourname/yourname.github.io.git
 ```
 
 ### 同步第三方主题
