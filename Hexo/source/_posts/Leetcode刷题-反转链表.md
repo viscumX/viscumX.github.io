@@ -23,6 +23,8 @@ output: 5->4->3->2->1->NULL
 
 ### 迭代
 
+只要在最开始设一个空节点，将当前节点的 next 都改为指向前一个节点
+
 ```C++
 /**
  * Definition for singly-linked list.
@@ -49,3 +51,34 @@ public:
     }
 };
 ```
+
+时间复杂度为$O(N)$，空间复杂度为$O(1)$
+
+### 递归
+
+假设某节点之后的所有节点都已经反转，
+
+```C++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(!head||!head->next){
+            return head;
+        }
+        ListNode* newHead = reverseList(head->next);
+        head->next->next = head;
+        head->next = NULL;
+        return newHead;
+    }
+};
+```
+
+时间复杂度为$O(N)$，空间复杂度为$O(N)$
