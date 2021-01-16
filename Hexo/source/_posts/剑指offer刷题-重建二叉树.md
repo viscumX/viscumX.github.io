@@ -52,7 +52,7 @@ public:
         for(int i=id+1;i<pre.size();i++){
             preRight.emplace_back(pre[i]);
             vinRight.emplace_back(vin[i]);
-        }
+        }  // 也可以考虑用迭代器
 
         root->left = reConstructBinaryTree(preLeft, vinLeft);
         root->right = reConstructBinaryTree(preRight, vinRight);
