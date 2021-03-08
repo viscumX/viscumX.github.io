@@ -41,7 +41,7 @@ external_link:
   exclude: ""
 filename_case: 0
 render_drafts: false
-post_asset_folder: true # 新建博客的时候顺便新建一个同名文件夹
+post_asset_folder: false # 新建博客的时候顺便新建一个同名文件夹
 relative_link: false
 future: true
 highlight:
