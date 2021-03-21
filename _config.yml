@@ -13,7 +13,7 @@ timezone: ""
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://viscumx.github.io/
+url: http://81.68.151.66
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -103,7 +103,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: root@81.68.151.66:/home/git/blog.git
+  repo: root@81.68.151.66:/home/git/blog.git
   branch: master
 
 search:
