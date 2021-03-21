@@ -103,7 +103,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:viscumX/viscumX.github.io.git
+  repository: root@81.68.151.66:/home/git/blog.git
   branch: master
 
 search:
