@@ -23,4 +23,4 @@ npm install hexo-asset-image --save
 npm install https://github.com/7ym0n/hexo-asset-image --save
 ```
 
-然后在 hexo/\_config.yml 中修改 `post_asset_folder: true`，这样就能在新建一个 post 的同时新建一个同名的文件夹，要插入的图片放入其中即可，重新部署就能正常显示了。
+然后在 hexo/\_config.yml 中修改 `post_asset_folder: true`，这样就能在新建一个 post 的同时新建一个同名的文件夹，要插入的图片放入其中即可，重新 clean 后部署就能正常显示了。
