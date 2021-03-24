@@ -1,3 +1,3 @@
-[submodule "Hexo/themes/next"]
-	path = Hexo/themes/next
-	url = git@github.com:viscumX/hexo-theme-next.git
+# [submodule "Hexo/themes/next"]
+# 	path = Hexo/themes/next
+# 	url = git@github.com:viscumX/hexo-theme-next.git
