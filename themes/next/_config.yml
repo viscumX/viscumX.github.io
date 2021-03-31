@@ -35,9 +35,9 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
+# scheme: Muse
+# scheme: Mist
+scheme: Pisces
 # scheme: Gemini
 
 # Dark Mode
@@ -596,8 +596,8 @@ changyan:
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
   enable: false
-  appid: 12UUkCUg4hnkhfn5eBtbdNhX-gzGzoHsz # Your leancloud application appid
-  appkey: xcHOaCMJgA1IRoaYQKEj2Q65 # Your leancloud application appkey
+  appid: # Your leancloud application appid
+  appkey: # Your leancloud application appkey
   notify: false # Mail notifier
   verify: false # Verification code
   placeholder: Just go go # Comment box placeholder
@@ -813,7 +813,7 @@ mermaid:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
