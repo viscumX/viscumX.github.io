@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-环形链表
+title: Leetcode-环形链表
 date: 2020-12-03 12:21:11
 categories: 刷题记录
 tags: 刷题

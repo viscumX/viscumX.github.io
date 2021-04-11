@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-爬楼梯
+title: Leetcode-爬楼梯
 date: 2020-11-09 15:13:55
 categories: 刷题记录
 tags: 刷题

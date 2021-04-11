@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-电话号码的字母组合
+title: Leetcode-电话号码的字母组合
 date: 2021-01-04 10:17:13
 categories: 刷题记录
 tags: 刷题

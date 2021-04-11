@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-最长回文子串
+title: Leetcode-最长回文子串
 date: 2020-12-23 16:29:46
 categories: 刷题记录
 tags: 刷题

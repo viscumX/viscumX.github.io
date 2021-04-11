@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-反转链表
+title: Leetcode-反转链表
 date: 2021-01-11 13:49:35
 categories: 刷题记录
 tags: 刷题

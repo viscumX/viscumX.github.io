@@ -1,5 +1,5 @@
 ---
-title: 剑指offer刷题-二进制中的1
+title: 剑指offer-二进制中的1
 date: 2021-01-13 16:28:23
 categories: 刷题记录
 tags: 刷题

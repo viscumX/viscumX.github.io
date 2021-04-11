@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-直方图的水量
+title: Leetcode-直方图的水量
 date: 2021-04-02 19:13:19
 categories: 刷题记录
 tags: 刷题

@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-对称二叉树
+title: Leetcode-对称二叉树
 date: 2020-11-10 10:41:08
 categories: 刷题记录
 tags: 刷题

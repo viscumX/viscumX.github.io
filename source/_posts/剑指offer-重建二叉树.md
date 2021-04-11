@@ -1,5 +1,5 @@
 ---
-title: 剑指offer刷题-重建二叉树
+title: 剑指offer-重建二叉树
 date: 2021-01-13 16:29:10
 categories: 刷题记录
 tags: 刷题

@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题--两数之和
+title: Leetcode-两数之和
 date: 2020-10-31 18:35:14
 categories: 刷题记录
 tags: 刷题

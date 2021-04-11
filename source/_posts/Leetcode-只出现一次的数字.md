@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-只出现一次的数字
+title: Leetcode-只出现一次的数字
 date: 2020-12-03 11:33:17
 categories: 刷题记录
 tags: 刷题

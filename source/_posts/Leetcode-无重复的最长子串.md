@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-无重复的最长子串
+title: Leetcode-无重复的最长子串
 date: 2020-12-21 19:38:36
 categories: 刷题记录
 tags: 刷题

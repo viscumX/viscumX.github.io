@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-二叉树的最大深度
+title: Leetcode-二叉树的最大深度
 date: 2020-11-10 11:39:51
 categories: 刷题记录
 tags: 刷题

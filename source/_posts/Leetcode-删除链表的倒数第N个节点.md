@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-删除链表的倒数第N个节点
+title: Leetcode-删除链表的倒数第N个节点
 date: 2021-01-04 21:51:45
 categories: 刷题记录
 tags: 刷题

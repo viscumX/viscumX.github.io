@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-有效的括号
+title: Leetcode-有效的括号
 date: 2020-11-03 10:22:40
 categories: 刷题记录
 tags: 刷题

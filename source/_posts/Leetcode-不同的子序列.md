@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-不同的子序列
+title: Leetcode-不同的子序列
 date: 2021-03-17 22:30:16
 categories: 刷题记录
 tags: 刷题

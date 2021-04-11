@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-三数之和
+title: Leetcode-三数之和
 date: 2020-12-28 21:37:24
 categories: 刷题记录
 tags: 刷题

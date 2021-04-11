@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-删除排序列表中的重复元素（2）
+title: Leetcode-删除排序列表中的重复元素（2）
 date: 2021-03-25 22:58:22
 categories: 刷题记录
 tags: 刷题

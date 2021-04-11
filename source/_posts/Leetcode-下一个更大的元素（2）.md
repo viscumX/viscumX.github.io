@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-下一个更大的元素（2）
+title: Leetcode-下一个更大的元素（2）
 date: 2021-03-06 17:46:37
 categories: 刷题记录
 tags: 刷题

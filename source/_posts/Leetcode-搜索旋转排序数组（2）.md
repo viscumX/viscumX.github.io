@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-搜索旋转排序数组（2）
+title: Leetcode-搜索旋转排序数组（2）
 date: 2021-04-07 13:51:45
 categories: 刷题记录
 tags: 刷题

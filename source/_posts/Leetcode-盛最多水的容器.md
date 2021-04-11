@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-盛最多水的容器
+title: Leetcode-盛最多水的容器
 date: 2020-12-28 19:47:25
 categories: 刷题记录
 tags: 刷题

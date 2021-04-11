@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-买卖股票的最佳时机
+title: Leetcode-买卖股票的最佳时机
 date: 2020-11-10 17:10:40
 categories: 刷题记录
 tags: 刷题

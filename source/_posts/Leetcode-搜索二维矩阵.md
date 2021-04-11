@@ -1,5 +1,5 @@
 ---
-title: Leetcode刷题-搜索二维矩阵
+title: Leetcode-搜索二维矩阵
 date: 2021-03-30 13:17:05
 categories: 刷题记录
 tags: 刷题
