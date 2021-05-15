@@ -1,5 +1,5 @@
 ---
-title: Leetcode--解码方法
+title: Leetcode-解码方法
 date: 2021-05-13 20:13:01
 categories: 刷题记录
 tags: 刷题
@@ -25,6 +25,8 @@ mathjax: true
 注意，消息不能分组为`(1 11 06)`，因为`"06"`不能映射为`"F"`，这是由于`"6"`和`"06"`在映射中并不等价。
 
 一个只含数字的非空字符串 s ，请计算并返回解码方法的总数 。答案肯定是一个 32 位的整数。
+
+**刷题链接**：[https://leetcode-cn.com/problems/decode-ways/](https://leetcode-cn.com/problems/decode-ways/)
 
 <!--more-->
 
