@@ -117,6 +117,8 @@ private:
 
 ### Multiset 和双指针
 
+multiset 是一个可以有重复元素的集合
+
 ```C++
 class MedianFinder {
 public:
