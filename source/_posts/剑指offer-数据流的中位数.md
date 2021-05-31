@@ -73,7 +73,7 @@ public:
 
     double findMedian() {
         int sz = v.size();
-        return (double)(n & 1 ? v[sz>>1] : (v[sz>>1-1] + v[sz>>1]) / 2);
+        return (double)(n & 1 ? v[sz>>1] : (v[(sz>>1)-1] + v[sz>>1]) / 2);
     }
 private:
     vector<int> v;
