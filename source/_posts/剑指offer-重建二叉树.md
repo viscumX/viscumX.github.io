@@ -3,7 +3,6 @@ title: 剑指offer-重建二叉树
 date: 2021-01-13 16:29:10
 categories: 刷题记录
 tags: 刷题
-mathjax: true
 ---
 
 ## 题目描述
@@ -15,6 +14,8 @@ mathjax: true
 <!--more-->
 
 ## 解法
+
+### dfs
 
 递归在二叉树中是十分常用的技巧。本题的解法涉及到用递归重建二叉树和遍历二叉树的方法。其实就是利用前序遍历中的根节点寻找中序遍历中的左右子节点部分，然后不断重复这个操作
 
@@ -34,6 +35,7 @@ public:
         if(pre.size()==0||vin.size()==0){
             return NULL;
         }
+        // 寻找根节点
         TreeNode* root = new TreeNode(pre[0]);
 
         int id = 0;
@@ -52,12 +54,52 @@ public:
         for(int i=id+1;i<pre.size();i++){
             preRight.emplace_back(pre[i]);
             vinRight.emplace_back(vin[i]);
-        }  // 也可以考虑用迭代器
+        }
 
         root->left = reConstructBinaryTree(preLeft, vinLeft);
         root->right = reConstructBinaryTree(preRight, vinRight);
 
         return root;
+    }
+};
+```
+
+### dfs 改进
+
+用 hashmap 存储中序遍历下标与当前值的映射关系
+
+```C++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+private:
+    unordered_map<int, int> hashtable;
+    TreeNode* helper(vector<int> preorder, vector<int> inorder, int preLeft, int preRight, int inLeft, int inRight){
+        if(preLeft>preRight){
+            return NULL;
+        }
+        TreeNode* root = new TreeNode(preorder[preLeft]);
+        int id = hashtable[root->val];
+        root->left = helper(preorder, inorder, preLeft+1, preLeft+id-inLeft, inLeft, id-1);
+        root->right = helper(preorder, inorder, preLeft+id-inLeft+1, preRight, id+1, inRight);
+        return root;
+    }
+public:
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        int n = preorder.size();
+        for(int i=0;i<n;++i){
+            hashtable[inorder[i]] = i;
+        }
+        return helper(preorder, inorder, 0, n-1, 0, n-1);
     }
 };
 ```
