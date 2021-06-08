@@ -103,3 +103,41 @@ public:
     }
 };
 ```
+
+### 中序遍历加后序遍历
+
+```C++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+private:
+    unordered_map<int, int> hashtable;
+    TreeNode* helper(vector<int> preorder, vector<int> inorder, int preLeft, int preRight, int inLeft, int inRight){
+        if(preLeft>preRight){
+            return NULL;
+        }
+        TreeNode* root = new TreeNode(preorder[preLeft]);
+        int id = hashtable[root->val];
+        root->left = helper(preorder, inorder, preLeft+1, preLeft+id-inLeft, inLeft, id-1);
+        root->right = helper(preorder, inorder, preLeft+id-inLeft+1, preRight, id+1, inRight);
+        return root;
+    }
+public:
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        int n = preorder.size();
+        for(int i=0;i<n;++i){
+            hashtable[inorder[i]] = i;
+        }
+        return helper(preorder, inorder, 0, n-1, 0, n-1);
+    }
+};
+```
