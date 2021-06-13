@@ -18,6 +18,11 @@ mathjax: true
 
 ### 动态规划
 
+假设当前的数为 i，第一个拆分出的数为 j，那么就有两种拆分方案：
+
+- 如果不拆分剩下的数，就是(i-j)\*j
+- 如果拆分剩下的数，就是 dp[i-j]\*j
+
 ```C++
 class Solution {
     public int integerBreak(int n) {
