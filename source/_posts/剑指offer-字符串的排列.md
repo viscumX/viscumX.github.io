@@ -59,15 +59,15 @@ public:
         if(cur.size() == s.size()){
             ans.insert(cur);
             return;
-        }
+        }  // cur完整了
         for(int i = 0; i < s.size(); ++i){
             if(used[i]){
-                continue;
+                continue;  // 使用过的就跳过
             }
             cur += s[i];
             used[i] = true;
             dfs(s, cur, used);
-            used[i] = false;
+            used[i] = false;  // 回溯完毕，复原
             cur.pop_back();
         }
     }
