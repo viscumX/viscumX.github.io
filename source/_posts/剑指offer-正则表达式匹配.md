@@ -27,20 +27,19 @@ public:
     bool match(string str, string pattern) {
         int length1 = str.length();
         int length2 = pattern.length();
-        vector<vector<int>> dp(length1+1,vector<int> (length2+1));
-        dp[0][0]=1;
+        vector<vector<int>> dp(length1 + 1,vector<int> (length2 + 1));
+        dp[0][0] = 1;
 
-        for(int i=0;i<=length1;++i){
-            for(int j=1;j<=length2;++j){
-                if(pattern[j-1]=='*'){
-                    dp[i][j] |= dp[i][j-2];
-                    if(i!=0 && (pattern[j-2]=='.'||str[i-1]==pattern[j-2])){
-                        dp[i][j] |= dp[i-1][j];
+        for (int i = 0; i <= length1; ++i){
+            for (int j = 1; j <= length2; ++j){
+                if (pattern[j - 1] == '*'){
+                    dp[i][j] |= dp[i][j - 2];   // pattern 的前 j - 1 位是否匹配
+                    if (i != 0 && (pattern[j - 2] == '.' || str[i - 1] == pattern[j - 2])){
+                        dp[i][j] |= dp[i - 1][j];   // str 的前 i - 1 位是否匹配
                     }
-                }
-                else{
-                    if(i!=0 && (pattern[j-1]=='.' || str[i-1]==pattern[j-1])){
-                        dp[i][j] |= dp[i-1][j-1];
+                } else {
+                    if (i != 0 && (pattern[j - 1] == '.' || str[i - 1] == pattern[j - 1])){
+                        dp[i][j] |= dp[i - 1][j - 1];
                     }
                 }
             }
