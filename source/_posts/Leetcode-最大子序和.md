@@ -52,18 +52,14 @@ public:
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int max = nums[0];
-        int temp = 0;
-        for (int i = 0;i<nums.size();i++){
-            temp += nums[i];
-            if(temp>max){
-                max = temp;
-            }
-            if(temp<0){
-                temp = 0;
-            }
+        int res = nums[0];
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+            res = sum > res ? sum : res;
+            sum = sum < 0 ? 0 : sum;
         }
-        return max;
+        return res;
     }
 };
 ```
@@ -79,48 +75,29 @@ public:
 ```C++
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        return maxRangedArray(nums, 0, nums.size()-1);
-    }
-
-    int maxRangedArray(vector<int>& nums, int start, int end){
-        if (start == end){
+    int help(vector<int> &nums, int start, int end) {
+        if (start == end) {
             return nums[start];
         }
-
-        int mid = (start + end) / 2;
-        int lMax = maxRangedArray(nums, start, mid);
-        int rMax = maxRangedArray(nums, mid + 1, end);
-
-        int leftMidMax = nums[mid];
-        int leftSum = 0;
-        for (int i = mid; i >= start; i--){
-            leftSum += nums[i];
-            if (leftSum > leftMidMax){
-                leftMidMax = leftSum;
-            }
+        int mid = start + (end - start >> 1);
+        int lMax = help(nums, start, mid);
+        int rMax = help(nums, mid + 1, end);
+        int lHalfMax = nums[mid];
+        int lHalfSum = 0;
+        for (int i = mid; i >= start; i--) {
+            lHalfSum += nums[i];
+            lHalfMax = lHalfMax < lHalfSum ? lHalfSum : lHalfMax;
         }
-
-        int rightMidMax = nums[mid + 1];
-        int rightSum = 0;
-        for (int i = mid + 1; i <= end; i++){
-            rightSum += nums[i];
-            if(rightSum > rightMidMax){
-                rightMidMax = rightSum;
-            }
+        int rHalfMax = nums[mid + 1];
+        int rHalfSum = 0;
+        for (int i = mid + 1; i <= end; i++) {
+            rHalfSum += nums[i];
+            rHalfMax = rHalfMax < rHalfSum ? rHalfSum : rHalfMax;
         }
-
-        int midMax = leftMidMax + rightMidMax;
-
-        if (lMax >= rMax && lMax >= midMax){
-            return lMax;
-        }
-        else if (rMax >= lMax && rMax >= midMax){
-            return rMax;
-        }
-        else{
-            return midMax;
-        }
+        return max(lHalfMax + rHalfMax, max(lMax, rMax));
+    }
+    int maxSubArray(vector<int>& nums) {
+        return help(nums, 0, nums.size() - 1);
     }
 };
 ```
